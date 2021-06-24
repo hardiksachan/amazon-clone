@@ -1,8 +1,16 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
+import ProductFeed from "../components/ProductFeed";
+import { GetServerSideProps } from "next";
+import { Product } from "../domain/product";
+import { FC } from "react";
 
-const Home = () => {
+type Props = {
+  products: Product[];
+};
+
+const Home: FC<Props> = ({ products }) => {
   return (
     <div className="bg-gray-100">
       <Head>
@@ -15,9 +23,22 @@ const Home = () => {
         {/* Banner */}
         <Banner />
         {/* Product Feed */}
+        <ProductFeed products={products} />
       </main>
     </div>
   );
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const products: Product[] = await fetch(
+    "https://fakestoreapi.com/products"
+  ).then((res) => res.json());
+
+  return {
+    props: {
+      products,
+    },
+  };
+};
