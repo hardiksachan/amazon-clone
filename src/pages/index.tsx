@@ -3,11 +3,11 @@ import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ProductFeed from "../components/ProductFeed";
 import { GetServerSideProps } from "next";
-import { Product } from "../domain/product";
+import { IProduct } from "../domain/product";
 import { FC } from "react";
 
 type Props = {
-  products: Product[];
+  products: IProduct[];
 };
 
 const Home: FC<Props> = ({ products }) => {
@@ -32,7 +32,7 @@ const Home: FC<Props> = ({ products }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const products: Product[] = await fetch(
+  const products: IProduct[] = await fetch(
     "https://fakestoreapi.com/products"
   ).then((res) => res.json());
 

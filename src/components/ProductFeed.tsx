@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { Product } from "../domain/product";
+import { IProduct } from "../domain/product";
 import ProductTile from "./ProductTile";
 import Image from "next/image";
 import bannerImg from "../../public/images/banner.jpg";
 
 type Props = {
-  products: Product[];
+  products: IProduct[];
 };
 
 const ProductFeed: FC<Props> = ({ products }) => {
