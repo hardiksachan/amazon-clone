@@ -4,9 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Successfully deployed to the following URLs:
 
-- amazon-clone-sage.vercel.app
-- amazon-clone-git-main-sachanhardik.vercel.app
-- amazon-clone-sachanhardik.vercel.app
+- (amazon-clone-sage.vercel.app)
+- (amazon-clone-git-main-sachanhardik.vercel.app)
+- (amazon-clone-sachanhardik.vercel.app)
 
 ## Getting Started
 
